@@ -52,8 +52,15 @@ You cannot do Category.name
 
 + Foreignkeys and manttomany fields cannot be assinged values, you must either .get() or .create(). The rest can, on the same line too.
 
+# Query
+
 + Product.objects.create(name="sameh", price=4, category=Category.objects.create(name="pop"))
 
 + There are two ways to filter, one standard, and one shorthand. Both achieve the same thing in this example;
 Product.objects.filter(category=Category.objects.get(name="Reggae")) - normal
 Product.objects.filter(category__name="Reggae") - shorthand
+
++ You can use a greater than or lesser than operator in filter like this
+Product.objects.filter(price__gte=1000)
+Product.objects.filter(price__lte=10)
+NOTE: that the position of the operator in the code doesnt neccessarily mean anything. Product.objects.filter(category__name="Reggae"), in this example, name is a field, not an operator.
