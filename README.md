@@ -51,3 +51,5 @@ You cannot do Category.name
 + .create() saves auatomatically instead of having to do .save()
 
 + Foreignkeys and manttomany fields cannot be assinged values, you must either .get() or .create(). The rest can, on the same line too.
+
++ Product.objects.create(name="sameh", price=4, category=Category.objects.create(name="pop"))
