@@ -49,3 +49,5 @@ You cannot do Category.name
 + https://docs.djangoproject.com/en/3.2/topics/db/queries/#saving-foreignkey-and-manytomanyfield-fields
 
 + .create() saves auatomatically instead of having to do .save()
+
++ Foreignkeys and manttomany fields cannot be assinged values, you must either .get() or .create(). The rest can, on the same line too.
