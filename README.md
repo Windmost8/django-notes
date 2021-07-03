@@ -105,3 +105,6 @@ iregex
 
 + You can also filter by words, using "contains". An example would be
 ```Product.objects.filter(description__contains="people")```
+
++ You can also index like so;
+```Product.objects.all()[:3]``` Note this is the first 3, not 2. It starts with 1. It is also not possible to negative index, so getting the last one could be tricky.
