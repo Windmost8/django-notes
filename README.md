@@ -53,3 +53,7 @@ You cannot do Category.name
 + Foreignkeys and manttomany fields cannot be assinged values, you must either .get() or .create(). The rest can, on the same line too.
 
 + Product.objects.create(name="sameh", price=4, category=Category.objects.create(name="pop"))
+
++ There are two ways to filter, one standard, and one shorthand. Both achieve the same thing in this example;
+Product.objects.filter(category=Category.objects.get(name="Reggae")) - normal
+Product.objects.filter(category__name="Reggae") - shorthand
