@@ -108,3 +108,6 @@ iregex
 
 + You can also index like so;
 ```Product.objects.all()[:3]``` Note this is the first 3, not 2. It starts with 1. It is also not possible to negative index, so getting the last one could be tricky.
+
++ You can filter by jumping through fields like this. This takes the products field from the order model, then the category from Product, and name.
+```Order.objects.filter(products__category__name="Rock")```
