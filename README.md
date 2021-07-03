@@ -126,7 +126,8 @@ Product.objects.get(name="iron maiden").delete()
 
 # Aggregation
 
-+ ``` Product.objects.all().aggregate(Max("price"))
++  Sum, average, min, and max.
+```Product.objects.all().aggregate(Max("price"))
 Out[22]: {'price__max': Decimal('2000')}
 
 In [23]: Product.objects.all().aggregate(Min("price"))
