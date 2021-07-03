@@ -101,4 +101,7 @@ regex
 iregex
 ```
 + Here is an exmaple of filter chaining, or with exclude;
-Product.objects.filter(category__name="Rock", price__gt=170).exclude(description="generic description")
+```Product.objects.filter(category__name="Rock", price__gt=170).exclude(description="generic description")```
+
++ You can also filter by words, using "contains". An example would be
+```Product.objects.filter(description__contains="people")```
