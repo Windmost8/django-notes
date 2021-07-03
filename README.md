@@ -137,4 +137,12 @@ In [24]: Product.objects.all().aggregate(Avg("price"))
 Out[24]: {'price__avg': Decimal('309.75')}
 
 In [25]: Product.objects.all().aggregate(Sum("price"))
-Out[25]: {'price__sum': Decimal('2478')}```
+Out[25]: {'price__sum': Decimal('2478')}
+```
+
++ If you want to calculate the total sum of an order for example. First you index the order and then bring all the products in that order to aggreagte, so;
+```
+o1 = Order.objects.get(id=1)
+then
+o1.products.all().aggregate(Sum("price"))
+```
