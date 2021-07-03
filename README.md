@@ -47,3 +47,5 @@ You cannot do Category.name
 + User is an inbuilt django Model, that is not shown but is there. You can check the fields in the admin page. 
 
 + https://docs.djangoproject.com/en/3.2/topics/db/queries/#saving-foreignkey-and-manytomanyfield-fields
+
++ .create() saves auatomatically instead of having to do .save()
