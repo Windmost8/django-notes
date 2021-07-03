@@ -64,3 +64,37 @@ Product.objects.filter(category__name="Reggae") - shorthand
 Product.objects.filter(price__gte=1000)
 Product.objects.filter(price__lte=10)
 NOTE: that the position of the operator in the code doesnt neccessarily mean anything. Product.objects.filter(category__name="Reggae"), in this example, name is a field, not an operator.
+
++ Here are a list of operators useable in filtering after __
+exact
+iexact
+contains
+icontains
+in
+gt
+gte
+lt
+lte
+startswith
+istartswith
+endswith
+iendswith
+range
+
+date
+year
+iso_year
+month
+day
+week
+week_day
+iso_week_day
+quarter
+time
+hour
+minute
+second
+
+isnull
+regex
+iregex
