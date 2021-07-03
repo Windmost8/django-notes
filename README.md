@@ -123,3 +123,17 @@ or
 
 Product.objects.get(name="iron maiden").delete()
 ```
+
+# Aggregation
+
++ ``` Product.objects.all().aggregate(Max("price"))
+Out[22]: {'price__max': Decimal('2000')}
+
+In [23]: Product.objects.all().aggregate(Min("price"))
+Out[23]: {'price__min': Decimal('1')}
+
+In [24]: Product.objects.all().aggregate(Avg("price"))
+Out[24]: {'price__avg': Decimal('309.75')}
+
+In [25]: Product.objects.all().aggregate(Sum("price"))
+Out[25]: {'price__sum': Decimal('2478')}```
