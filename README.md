@@ -32,3 +32,18 @@ Product.objects.get(name="billy") returns Product item with the name billy. Note
 p = Product.objects.get(name="billy") and then p.save() will save it to the database. Note. a typo will not result in an error, but you will not get your desired result.
 
 CHECK DJANGO DOCUMENTATION https://docs.djangoproject.com/en/3.2/topics/db/queries/
+
+# ManyToMany
++ You can "add" via the same line, or do it seperately.
+o1.products.add
+o1.products.add(Product.objects.get(name="åsa"), Product.objects.get(name="bob marley"))
+
++ You cannot do a .attribute to a Class/Model, but rather to an object. So for example 
+c = Category() and then c.name
+You cannot do Category.name
+
++ Realize closely what is the object, and what is the Class. For your own sake, maybe name objects more clearer. 
+
++ User is an inbuilt django Model, that is not shown but is there. You can check the fields in the admin page. 
+
++ https://docs.djangoproject.com/en/3.2/topics/db/queries/#saving-foreignkey-and-manytomanyfield-fields
