@@ -111,3 +111,15 @@ iregex
 
 + You can filter by jumping through fields like this. This takes the products field from the order model, then the category from Product, and name.
 ```Order.objects.filter(products__category__name="Rock")```
+
++ In order to delete, you simple use .delete()
+ex;
+
+```
+p = Product.objects.last()
+p.delete()
+
+or
+
+Product.objects.get(name="iron maiden").delete()
+```
