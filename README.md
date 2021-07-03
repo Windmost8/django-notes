@@ -126,7 +126,7 @@ Product.objects.get(name="iron maiden").delete()
 
 # Aggregation
 
-+  Sum, average, min, and max.
++  Sum, average, min, and max. Ignore the in and out, its just from the shell. This needs imports, Import Max, Avg etc..
 ```Product.objects.all().aggregate(Max("price"))
 Out[22]: {'price__max': Decimal('2000')}
 
