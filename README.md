@@ -98,3 +98,6 @@ second
 isnull
 regex
 iregex
+
++ Here is an exmaple of filter chaining, or with exclude;
+Product.objects.filter(category__name="Rock", price__gt=170).exclude(description="generic description")
