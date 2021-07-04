@@ -187,4 +187,19 @@ print(", ".join(nameList))
 ```
 ```
 def index(request):
+    latest_question_list = Question.objects.order_by('-pub_date')[:5]
+    if 'mickey' in request.GET:
+        chosenQuestion = Question.objects.get(pk=request.GET.get('mickey'))
+    else:
+        chosenQuestion = None
+    #print(request.GET.get('q'))
+    template = loader.get_template("polls/index.html")
+    context = {
+        'latest_question_list': latest_question_list,
+        'userAgent': request.headers["User-Agent"],
+        'request': request,
+        'chosenQuestion': chosenQuestion
+    }
+    response = template.render(context, request)
+    return HttpResponse(response)
 ```
