@@ -146,3 +146,23 @@ o1 = Order.objects.get(id=1)
 then
 o1.products.all().aggregate(Sum("price"))
 ```
+
+# General objects
++ How to make a class, and objects creating lists, and joining them in the end to create a string.
+```
+class Animal:
+    def __init__(self, name, sound):
+        self.name = name
+        self.sound = sound 
+
+    def makeSound(self):
+        print(self.name, self.sound)
+
+a1 = Animal('dog', 'bark')
+a2 = Animal('bird', 'tweet')
+a2.sound = 'chirp'
+a3 = Animal("cat", "meow")
+animalList = [a1, a2, a3]
+nameList = [animal.name for animal in animalList]
+print(", ".join(nameList))
+```
