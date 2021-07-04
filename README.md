@@ -166,3 +166,25 @@ animalList = [a1, a2, a3]
 nameList = [animal.name for animal in animalList]
 print(", ".join(nameList))
 ```
+
+# Views & Templates
++ 
+```
+{% if latest_question_list %}
+    <ul>
+    {% for q in latest_question_list %}
+        <li><a href="/polls?mickey={{ q.id }}">{{ q.question_text }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <h1>there are NO questions</h1>
+{% endif %}
+<h6>browser is {{ userAgent }}</h6>
+<h6>host is {{ request.headers.Host }}</h6>
+{% if chosenQuestion %}
+    <h6>params are {{ chosenQuestion }}</h6>
+{% endif %}
+```
+```
+def index(request):
+```
